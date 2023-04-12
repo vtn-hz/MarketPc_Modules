@@ -1,0 +1,22 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var MarketPc\AssembledPc\ViewModel\Assembled $assembledVm */
+/** @var MarketPc\AssembledPc\Model\ResourceModel\Foreignkey\Collection $assembled  */
+
+    $assembledVm = $block->getData('assembled_vm');
+    $assembled = $assembledVm->getDetail();
+
+?>
+<div class="assembledpc-assembled-detail">
+    <h3><?= $escaper->escapeHtml($assembled->getData('name')) ?></h3>
+    <ul>
+        <?php foreach ($assembledVm->getComponents() as $component): ?>
+            <li>
+                <a href="<?= $block->getUrl('components/component/detail', ['id' => $component->getData('id')]) ?>">
+                    <?= $escaper->escapeHtml($component->getData('model')) ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

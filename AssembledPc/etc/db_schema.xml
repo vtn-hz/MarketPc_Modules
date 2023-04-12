@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="marketpc_assembledpc" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" />
+        <column xsi:type="varchar" name="name" nullable="false" length="255" />
+        <column xsi:type="float" name="rate" nullable="true" />
+
+    
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"/>
+
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+
+    <table name="marketpc_assembledpc___marketpc_componentpc" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" />
+        <column xsi:type="int" name="id_marketpc_assembledpc" unsigned="true" nullable="false" />
+        <column xsi:type="int" name="id_marketpc_componentpc" unsigned="true" nullable="false" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+        <constraint xsi:type="foreign" 
+            referenceId="MARKETPC_ASSEMBLEDPC__MARKETPC_COMPONENTPC_ID_MARKETPC_COMPONENTPC" 
+            
+            table="marketpc_assembledpc___marketpc_componentpc" 
+            column="id_marketpc_componentpc" 
+            
+            referenceTable="marketpc_componentpc" 
+            referenceColumn="id" 
+            
+            onDelete="CASCADE"  
+        /> 
+        <!--    Cascade -> Delete when the component doesnt exits anymore   -->
+        <!--    https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html -->
+        <constraint xsi:type="foreign" 
+            referenceId="MARKETPC_ASSEMBLEDPC__MARKETPC_COMPONENTPC_ID_MARKETPC_ASSEMBLEDPC" 
+            
+            table="marketpc_assembledpc___marketpc_componentpc" 
+            column="id_marketpc_assembledpc" 
+            
+            referenceTable="marketpc_assembledpc" 
+            referenceColumn="id" 
+            
+            onDelete="CASCADE"
+        />
+    </table>
+</schema>

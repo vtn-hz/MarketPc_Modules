@@ -1,0 +1,19 @@
+
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var MarketPc\AssembledPc\ViewModel\Assembled $assembledVm */
+    $assembledVm = $block->getData('assembled_vm');
+?>
+<div class="assembledpc-assembled-list">
+    <h3><?= __('Computadora Ensamblada') ?></h3>
+    <ul>
+        <?php foreach ($assembledVm->getList() as $assembledPc): ?>
+            <li>
+                <a href="<?= $block->getUrl('assembleds/assembled/detail', ['id' => $assembledPc->getData('id')]) ?>">
+                    <?= $escaper->escapeHtml($assembledPc->getData('name')) ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference 
+    for="MarketPc\AssembledPc\Api\Data\AssembledInterface" 
+    type="MarketPc\AssembledPc\Model\Assembled"
+    />
+    <preference 
+    for="MarketPc\AssembledPc\Api\AssembledRepositoryInterface" 
+    type="MarketPc\AssembledPc\Model\AssembledRepository"
+    />
+</config>

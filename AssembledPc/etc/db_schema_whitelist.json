@@ -1,0 +1,25 @@
+{
+    "marketpc_assembledpc": {
+        "column": {
+            "id": true,
+            "name": true,
+            "rate": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "marketpc_assembledpc___marketpc_componentpc": {
+        "column": {
+            "id": true,
+            "id_marketpc_assembledpc": true,
+            "id_marketpc_componentpc": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_61EC82348A4CF90ABCE7131A4137C5BF": true,
+            "FK_E12649642EB7267318D60F5413C67DDB": true
+        }
+    }
+}

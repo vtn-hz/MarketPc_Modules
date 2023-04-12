@@ -1,0 +1,19 @@
+
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var MarketPc\ComponentPc\ViewModel\Component $componentVm */
+    $componentVm = $block->getData('component_vm');
+?>
+<div class="componentpc-component-list">
+    <h3><?= __('Componentes') ?></h3>
+    <ul>
+        <?php foreach ($componentVm->getList() as $component): ?>
+            <li>
+                <a href="<?= $block->getUrl('components/component/detail', ['id' => $component->getData('id')]) ?>">
+                    <?= $escaper->escapeHtml($component->getData('model')) ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

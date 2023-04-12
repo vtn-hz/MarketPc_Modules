@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <block name="name" template="MarketPc_ComponentPc::component/list.phtml">
+                <arguments>
+                        <argument name="component_vm" xsi:type="object">MarketPc\ComponentPc\ViewModel\Component</argument>
+                </arguments>
+            </block>
+            <!--<block name="componentpc.component.list" template="MarketPc_ComponentPc::component/list.phtml">
+                <arguments>
+                        <argument name="component_vm" xsi:type="object">MarketPc\ComponentPc\ViewModel\Component</argument>
+                </arguments>
+            </block>-->
+        </referenceContainer>
+
+        <referenceBlock name="footer" display="false"/>
+        
+    </body>
+</page>

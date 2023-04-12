@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block name="marketpc.assembledpc.list" 
+            template="MarketPc_AssembledPc::assembled/list.phtml">
+
+                <arguments>
+                        <argument name="assembled_vm" xsi:type="object">MarketPc\AssembledPc\ViewModel\Assembled</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+        <referenceBlock name="footer" display="false"/>
+        
+    </body>
+</page>

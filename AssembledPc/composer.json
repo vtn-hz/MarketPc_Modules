@@ -1,0 +1,13 @@
+{
+    "name": "marketpc/module-assembledpc",
+    "require": {
+        "php": "^7.4"
+    },
+    "type": "magento2-module",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "MarketPc\\AssembledPc\\": ""
+        }
+    }
+}

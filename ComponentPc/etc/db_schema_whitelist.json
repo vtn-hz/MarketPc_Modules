@@ -1,0 +1,14 @@
+{
+    "marketpc_componentpc": {
+        "column": {
+            "id": true,
+            "model": true,
+            "type": true,
+            "price": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

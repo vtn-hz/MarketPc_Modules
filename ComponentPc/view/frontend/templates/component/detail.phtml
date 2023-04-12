@@ -1,0 +1,12 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var MarketPc\ComponentPc\ViewModel\Component $componentVm */
+    $componentVm = $block->getData('component_vm');
+    $component = $componentVm->getDetail();
+?>
+<div class="componentpc-component-detail">
+    <h1><?= $escaper->escapeHtml($component->getModel()) ?></h1>
+    <h2>Tipo: <?= $escaper->escapeHtml($component->getType()) ?></h2>
+    <h2>Precio $<?= $escaper->escapeHtml($component->getPrice()) ?></h2>
+</div>
